@@ -1,0 +1,38 @@
+﻿<Window x:Class="OTPGenerator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="OTP Generator" Height="300" Width="500"
+        WindowStartupLocation="CenterScreen"
+        Icon="app_icon.png">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBox x:Name="SecretKeyLabel" Grid.Row="0" Margin="0,0,0,10" />
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,10">
+            <Button Content="Set Secret" Click="OnSetSecretButtonClick" Margin="0,0,10,0" />
+            <Button Content="Clear Secret" Click="OnClearSecretButtonClick" />
+        </StackPanel>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" x:Name="OtpCodeLabel" FontSize="28" FontWeight="Bold" 
+                       TextAlignment="Center" VerticalAlignment="Center"/>
+            <Button Grid.Column="1" x:Name="CopyToClipboardButton" Click="OnCopyToClipboardButtonClick" Width="28" Height="28" Background="Transparent">
+                <Button.Content>
+                    <Image Source="copy_icon.png" />
+                </Button.Content>
+            </Button>
+        </Grid>
+        <ProgressBar x:Name="TimeoutBar" Grid.Row="3" Height="20" Maximum="30" Margin="0,0,0,10" />
+        <TextBlock x:Name="TimeLeftLabel" Grid.Row="4" />
+        <TextBlock x:Name="StatusLabel" Grid.Row="5" Margin="0,10,0,0" />
+    </Grid>
+</Window>
