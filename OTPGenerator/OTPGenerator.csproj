@@ -12,6 +12,11 @@
   <ItemGroup>
     <None Remove="app_icon.ico" />
     <None Remove="copy.png" />
+    <None Remove="Resources\copy.png" />
+    <None Remove="Resources\key.png" />
+    <None Remove="Resources\refresh.png" />
+    <None Remove="Resources\remove.png" />
+    <None Remove="Resources\unlock.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,7 +26,23 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="8.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Windows.Forms.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Resources\copy.png" />
+    <Resource Include="Resources\refresh.png" />
+    <Resource Include="Resources\key.png" />
+    <Resource Include="Resources\remove.png" />
+    <Resource Include="Resources\unlock.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
